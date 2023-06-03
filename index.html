@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0">
+    <title>Never Have I Ever...</title>
+    <link rel="stylesheet" href="styles.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&family=Nunito+Sans:wght@200;300;400;500;600;700;800;900;1000&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav>
+        <button id="language-picker" onclick="assets/show_lang()"><img src="assets/globe.svg" id="globe"></button>
+        <button id="lang-polish" class="lang hide" onclick="change_lang('pl')"><img src="assets/pl.svg" class="flag"></button>
+        <button id="lang-english" class="lang hide" onclick="change_lang('eng')"><img src="assets/eng.svg" class="flag"></button>
+    </nav>
+    <div id="textbox">
+            <div id="penis">
+                <h3 id="nhie-text">Never have I ever... </h3>
+                <button id="button-roll" onclick="roll()"><img src="assets/chat.svg"></button>
+                <a id="tap-indicator"><img src="assets/tap.svg"></a>
+            </div>
+            <div id="rolled"></div>
+    </div>
+    <footer>
+        <p>made by <a target="_blank" href="https://github.com/FlashAndromeda">@FlashAndromeda</a></p>
+    </footer>
+
+    <script src="scripts.js"></script>
+</body>
+
+</html>
