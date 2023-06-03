@@ -15,6 +15,16 @@ body {
     color: #eceae7;
 }
 
+#mature-content {
+    position: absolute;
+    margin: 0;
+    top: 4vw;
+    left: 2vw;
+
+    font-family: 'Comfortaa', 'Tahoma';
+    font-size: 2rem;
+}
+
 nav {
     position: absolute;
     top: 2vw;
@@ -70,8 +80,7 @@ nav > button {
 }
 
 .flag {
-    height: 10vw;
-    max-height: 70px;
+    height: 6vw;
     aspect-ratio: 1/1;
 }
 
@@ -130,7 +139,6 @@ h3 {
     border-radius: 10%;
 
     height: 5rem;
-    max-height: 100px;
 
     display: flex;
     justify-content: center;
@@ -139,7 +147,6 @@ h3 {
 
 #button-roll > img {
     height: 5rem;
-    max-height: 100px;
     aspect-ratio: 1/1;
 }
 
