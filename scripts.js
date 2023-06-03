@@ -36,8 +36,6 @@ function change_lang(opt) {
     }
 }
 
-
-
 const $tap_indicator = document.querySelector("#tap-indicator")
 function roll() {
     $tap_indicator.classList.add('opacity-0');
