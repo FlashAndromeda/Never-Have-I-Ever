@@ -1,7 +1,3 @@
-
-var db_pl = './assets/db_pl.txt';
-var db_eng = './assets/db_eng.txt';
-
 const $langbuttons = document.querySelectorAll('.lang'), langbuttons_len = $langbuttons.length;
 const $globe = document.querySelector("#globe");
 
@@ -44,10 +40,5 @@ function change_lang(opt) {
 
 const $tap_indicator = document.querySelector("#tap-indicator")
 function roll() {
-    $tap_indicator.classList.add('opacity-0')
-    if (lang == 'pl') {
-
-    } else if (lang == 'eng') {
-        
-    }
+    $tap_indicator.classList.add('opacity-0');
 }
