@@ -26,6 +26,10 @@ body {
     font-size: 2rem;
 }
 
+.underline {
+    text-decoration: 5px underline var(--highlight);
+}
+
 nav {
     position: absolute;
     top: 1vw;
@@ -199,6 +203,11 @@ h3 {
     font-weight: 300;
     text-align: center;
     margin-bottom: 2rem;
+}
+
+#rolled > h3:first-child {
+    text-decoration: 5px underline var(--highlight);
+    font-weight: 600;
 }
 
 footer > p {

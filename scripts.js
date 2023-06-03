@@ -53,21 +53,30 @@ function add_line(content) {
     h3.classList.add('rolled-text');
     h3.innerHTML = content;
     $rolled.insertBefore(h3, $rolled.firstChild);
+
+    if ($rolled.children.length > 15) {
+        $rolled.lastElementChild.remove()
+    }
 }
+
+var $db_pl = {}
+var $db_eng = {}
+
+readFileAndCreateArray('databases/db_pl.txt').then(lines => {
+    $db_pl = lines
+});
+
+readFileAndCreateArray('databases/db_eng.txt').then(lines => {
+    $db_eng = lines
+});
 
 const $tap_indicator = document.querySelector("#tap-indicator")
 function roll() {
     $tap_indicator.classList.add('opacity-0');
     if (lang == 'pl') {
-        readFileAndCreateArray('databases/db_pl.txt')
-        .then(lines => {
-        add_line(getRandomElement(lines));
-        });
+        add_line(getRandomElement($db_pl));
     } else if (lang == 'eng') {
-        readFileAndCreateArray('databases/db_eng.txt')
-        .then(lines => {
-        add_line(getRandomElement(lines));
-        });
+        add_line(getRandomElement($db_eng));
     }
 }
 
