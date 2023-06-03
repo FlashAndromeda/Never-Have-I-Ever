@@ -26,10 +26,16 @@ const $nhie_text = document.querySelector('#nhie-text');
 var lang = 'eng'
 function change_lang(opt) {
     if (opt == 'pl') {
+        if (is_finished == true) {
+            $rolled.firstChild.innerHTML = "Skończyły ci się pytania :( Odśwież stronę aby zacząć od nowa."
+        }
         lang = 'pl';
         $nhie_text.innerHTML = 'Nigdy, przenigdy nie...';
         show_lang();
     } else if (opt == 'eng') {
+        if (is_finished == true) {
+            $rolled.firstChild.innerHTML = "You've ran out of questions :( Refresh the page to start again."
+        }
         lang = 'eng';
         $nhie_text.innerHTML = 'Never have I ever...';
         show_lang();
