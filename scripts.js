@@ -36,7 +36,39 @@ function change_lang(opt) {
     }
 }
 
+function readFileAndCreateArray(filePath) {
+    return fetch(filePath)
+      .then(response => response.text())
+      .then(fileContent => fileContent.split('\n'));
+}
+
+function getRandomElement(array) {
+    const randomIndex = Math.floor(Math.random() * array.length);
+    return array[randomIndex];
+}
+
+const $rolled = document.querySelector('#rolled');
+function add_line(content) {
+    var h3 = document.createElement('h3');
+    h3.classList.add('rolled-text');
+    h3.innerHTML = content;
+    $rolled.insertBefore(h3, $rolled.firstChild);
+}
+
 const $tap_indicator = document.querySelector("#tap-indicator")
 function roll() {
     $tap_indicator.classList.add('opacity-0');
+    if (lang == 'pl') {
+        readFileAndCreateArray('databases/db_pl.txt')
+        .then(lines => {
+        add_line(getRandomElement(lines));
+        });
+    } else if (lang == 'eng') {
+        readFileAndCreateArray('databases/db_eng.txt')
+        .then(lines => {
+        add_line(getRandomElement(lines));
+        });
+    }
 }
+
+
