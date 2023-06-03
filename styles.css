@@ -19,7 +19,7 @@ body {
 #mature-content {
     position: absolute;
     margin: 0;
-    top: 4vw;
+    top: 2vw;
     left: 2vw;
 
     font-family: 'Comfortaa', 'Tahoma';
@@ -28,7 +28,7 @@ body {
 
 nav {
     position: absolute;
-    top: 2vw;
+    top: 1vw;
     right: 2vw;
 
     display: flex;
@@ -82,6 +82,7 @@ nav > button {
 
 .flag {
     height: 6vw;
+    max-height: 70px;
     aspect-ratio: 1/1;
 }
 
