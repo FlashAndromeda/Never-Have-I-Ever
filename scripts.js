@@ -36,10 +36,10 @@ function change_lang(opt) {
     }
 }
 
-function readFileAndCreateArray(filePath) {
-    return fetch(filePath)
-      .then(response => response.text())
-      .then(fileContent => fileContent.split('\n'));
+async function readFileAndCreateArray(filePath) {
+    const response = await fetch(filePath);
+    const fileContent = await response.text();
+    return fileContent.split('\n');
 }
 
 function getRandomElement(array) {
@@ -59,6 +59,11 @@ function add_line(content) {
     }
 }
 
+function getIndexOf(array, value) {
+    var index = array.indexOf(value);
+    return index
+}
+
 var $db_pl = {}
 var $db_eng = {}
 
@@ -70,14 +75,39 @@ readFileAndCreateArray('databases/db_eng.txt').then(lines => {
     $db_eng = lines
 });
 
+var is_finished = false;
+function database_empty(lang) {
+    is_finished = true;
+    if (lang == 'pl') {
+        add_line("Skończyły ci się pytania :( Odśwież stronę aby zacząć od nowa.")
+    } else if (lang == 'eng') {
+        add_line("You've ran out of questions :( Refresh the page to start again.");
+    }
+
+}
+
 const $tap_indicator = document.querySelector("#tap-indicator")
 function roll() {
     $tap_indicator.classList.add('opacity-0');
     if (lang == 'pl') {
-        add_line(getRandomElement($db_pl));
+        if (is_finished == true) {
+            return
+        } else if ($db_pl.length == 0) {
+            database_empty('pl')
+            return
+        }
+        var random_line = getRandomElement($db_pl);
+        var index = getIndexOf($db_pl, random_line);
+        add_line($db_pl.splice(index, 1));
     } else if (lang == 'eng') {
-        add_line(getRandomElement($db_eng));
+        if (is_finished == true) {
+            return
+        } else if ($db_eng.length == 0) {
+            database_empty('eng')
+            return
+        }
+        var random_line = getRandomElement($db_eng);
+        var index = getIndexOf($db_eng, random_line);
+        add_line($db_eng.splice(index, 1));
     }
 }
-
-
