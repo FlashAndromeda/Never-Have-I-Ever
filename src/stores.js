@@ -9,6 +9,9 @@ export const lang_dict = {
         yes: 'Yes',
         no: 'No',
       },
+      footer: {
+        title: 'made by'
+      },
 
     },
     pl: {
@@ -16,6 +19,9 @@ export const lang_dict = {
         title: 'Czy jesteś osobą pełnoletnią?',
         yes: 'Tak',
         no: 'Nie',
+      },
+      footer: {
+        title: 'Autorstwa'
       },
 
     },

@@ -1,4 +1,8 @@
-<p>made by <a target="_blank" href="https://github.com/FlashAndromeda">@FlashAndromeda</a></p>
+<script>
+    import {_} from 'svelte-i18n';
+</script>
+
+<p>{$_('footer.title')} <a target="_blank" href="https://github.com/FlashAndromeda">@FlashAndromeda</a></p>
 
 <style>
     p {
@@ -6,7 +10,7 @@
         cursor: default;
         color: var(--color, #7a7a7a);
         font-family: 'Comfortaa', 'Arial';
-        font-size: 3vh;
+        font-size: 2.5vh;
     }
 
     a {
